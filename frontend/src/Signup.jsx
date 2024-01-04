@@ -38,6 +38,9 @@ function Signup() {
       <button onClick={handleSignup}>Signup</button>
 
       <Signout />
+
+      <span>Already have an account</span>
+      <a href="/login">Login</a>
     </div>
   );
 }
