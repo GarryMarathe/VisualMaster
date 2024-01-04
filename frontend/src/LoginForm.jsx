@@ -53,6 +53,7 @@
 
 
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -112,7 +113,8 @@ function LoginForm() {
       <button onClick={handleLogin}>Login</button>
       <br></br>
       <span>Don't have an account</span>
-      <a href="/register">Sign up</a>
+      <a href="/">Sign up</a>
+      {/* <Link to='/'>SignUp</Link> */}
     </div>
   );
 }
