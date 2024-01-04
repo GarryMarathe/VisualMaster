@@ -12,7 +12,7 @@ from flask_jwt_extended import (
 
 app = Flask(__name__)
 app.secret_key = 'jwt_secret_key'  # Set a secret key for session management
-app.config['JWT_SECRET_KEY'] = 'jwt_secret_key'
+app.config['JWT_SECRET_KEY'] = 'pX~-ERh5AzgZ#Be3?W9^vnKu}Vs_D'
 app.config['JWT_BLACKLIST_ENABLED'] = True
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
 
@@ -74,7 +74,7 @@ def login():
         return jsonify({'message': 'Login failed', 'error': 'Invalid credentials'}), 401
 # Remove the /signup route or keep it for user registration
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['GET'])
 @jwt_required()
 def logout():
     jti = get_jwt()['jti']
@@ -101,11 +101,11 @@ def protected():
 
 
 
-@app.route('/signout', methods=['POST'])
-def signout():
-    # Clear the user session or any other necessary cleanup
-    session.clear()
-    return jsonify({'message': 'Signout successful'})
+# @app.route('/signout', methods=['GET'])
+# def signout():
+    
+#     session.clear()
+#     return jsonify({'message': 'Signout successful'})
 
 
 
